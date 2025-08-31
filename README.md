@@ -74,8 +74,6 @@ Implemented via a generalized `run_classifiers()` function:
 ## Results
 
 
-## Results
-
 ### **Pipeline A – PCA only (19 components)**
 
 | Model                | Accuracy | Weighted Precision | Macro Precision | Notes |
@@ -85,30 +83,24 @@ Implemented via a generalized `run_classifiers()` function:
 | KNN                   | 99.97%   | 0.999             | 0.983          | Nearly as strong |
 | Ridge Classifier      | ~98–99%  | High              | Low            | Unstable |
 
+| Accuracy Comparison | Weighted vs Macro |
+|--------------------|-----------------|
+| ![Pipeline A Accuracy Comparison](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_accuracy_comparison.png) | ![Pipeline A Weighted vs Macro](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_weighted_vs_macro.png) |
+
+### Confusion Matrices
+
 <table>
-  <tr>
-    <td>
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." alt="Image 1" width="300">
-    </td>
-    <td>
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." alt="Image 2" width="300">
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." alt="Image 3" width="300">
-    </td>
-    <td>
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." alt="Image 4" width="300">
-    </td>
-  </tr>
+<tr>
+  <td><img src="https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_dtree_matrix.png" width="200"></td>
+  <td><img src="https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_knn_matrix.png" width="200"></td>
+  <td><img src="https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_unweighted_log_matrix.png" width="200"></td>
+</tr>
+<tr>
+  <td><img src="https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_unweighted_ridge_matrix.png" width="200"></td>
+  <td><img src="https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_weighted_log_matrix.png" width="200"></td>
+  <td><img src="https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_weighted_ridge_matrix.png" width="200"></td>
+</tr>
 </table>
-
-
-
-
-📊 Example visualization:  
-![Confusion Matrix PCA](images/confusion_matrix_pca.png)
 
 ---
 
@@ -121,28 +113,25 @@ Implemented via a generalized `run_classifiers()` function:
 | KNN                   | 99.96%   | 0.997             | 0.959          | Small macro precision drop |
 | Ridge Classifier      | ~92%     | Decent            | Weak           | Weaker than tree/KNN |
 
-📊 Example visualization:  
-![Confusion Matrix RF](images/confusion_matrix_rf.png)
+
+| Accuracy Comparison | Weighted vs Macro |
+|--------------------|-----------------|
+| ![Pipeline B Accuracy Comparison](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_accuracy_comparison.png) | ![Pipeline B Weighted vs Macro](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_weighted_vs_macro.png) |
+
+### Confusion Matrices
 
 <table>
-  <tr>
-    <td>
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." alt="Image 1" width="300">
-    </td>
-    <td>
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." alt="Image 2" width="300">
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." alt="Image 3" width="300">
-    </td>
-    <td>
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." alt="Image 4" width="300">
-    </td>
-  </tr>
+<tr>
+  <td><img src="https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_dtree_matrix.png" width="200"></td>
+  <td><img src="https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_knn_matrix.png" width="200"></td>
+  <td><img src="https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_unweighted_log_matrix.png" width="200"></td>
+</tr>
+<tr>
+  <td><img src="https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_unweighted_ridge_matrix.png" width="200"></td>
+  <td><img src="https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_weighted_log_matrix.png" width="200"></td>
+  <td><img src="https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_weighted_ridge_matrix.png" width="200"></td>
+</tr>
 </table>
-
 
 ---
 
@@ -155,148 +144,58 @@ Implemented via a generalized `run_classifiers()` function:
 | KNN                   | 99.97%   | 0.998             | 0.980          | Strong all-round |
 | Ridge Classifier      | ~98%     | Good              | Weak           | Similar weakness trend |
 
-📊 Example visualization:  
-![Confusion Matrix RF+PCA](images/confusion_matrix_rfpca.png)
-## Pipeline A
-
 | Accuracy Comparison | Weighted vs Macro |
-|-------------------|-----------------|
-| ![Pipeline A Accuracy Comparison](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineA_accuracy_comparison.png) | ![Pipeline A Weighted vs Macro](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineA_weighted_vs_macro.png) |
+|--------------------|-----------------|
+| ![Pipeline C Accuracy Comparison](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_accuracy_comparison.png) | ![Pipeline C Weighted vs Macro](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_weighted_vs_macro.png) |
 
-**Confusion Matrices**
-
-| DTree | KNN |
-|-------|-----|
-| ![Pipeline A DTree](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineA_dtree_matrix.png) | ![Pipeline A KNN](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineA_knn_matrix.png) |
-| Unweighted Log | Unweighted Ridge |
-| ![Pipeline A Unweighted Log](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineA_unweighted_log_matrix.png) | ![Pipeline A Unweighted Ridge](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineA_unweighted_ridge_matrix.png) |
-| Weighted Log | Weighted Ridge |
-| ![Pipeline A Weighted Log](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineA_weighted_log_matrix.png) | ![Pipeline A Weighted Ridge](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineA_weighted_ridge_matrix.png) |
-
----
-
-## Pipeline B
-
-| Accuracy Comparison | Weighted vs Macro |
-|-------------------|-----------------|
-| ![Pipeline B Accuracy Comparison](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineB_accuracy_comparison.png) | ![Pipeline B Weighted vs Macro](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineB_weighted_vs_macro.png) |
-
-**Confusion Matrices**
-
-| DTree | KNN |
-|-------|-----|
-| ![Pipeline B DTree](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineB_dtree_matrix.png) | ![Pipeline B KNN](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineB_knn_matrix.png) |
-| Unweighted Log | Unweighted Ridge |
-| ![Pipeline B Unweighted Log](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineB_unweighted_log_matrix.png) | ![Pipeline B Unweighted Ridge](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineB_unweighted_ridge_matrix.png) |
-| Weighted Log | Weighted Ridge |
-| ![Pipeline B Weighted Log](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineB_weighted_log_matrix.png) | ![Pipeline B Weighted Ridge](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineB_weighted_ridge_matrix.png) |
-
----
-
-## Pipeline C
-
-| Accuracy Comparison | Weighted vs Macro |
-|-------------------|-----------------|
-| ![Pipeline C Accuracy Comparison](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineC_accuracy_comparison.png) | ![Pipeline C Weighted vs Macro](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineC_weighted_vs_macro.png) |
-
-**Confusion Matrices**
-
-| DTree | KNN |
-|-------|-----|
-| ![Pipeline C DTree](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineC_dtree_matrix.png) | ![Pipeline C KNN](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineC_knn_matrix.png) |
-| Unweighted Log | Unweighted Ridge |
-| ![Pipeline C Unweighted Log](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineC_unweighted_log_matrix.png) | ![Pipeline C Unweighted Ridge](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineC_unweighted_ridge_matrix.png) |
-| Weighted Log | Weighted Ridge |
-| ![Pipeline C Weighted Log](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineC_weighted_log_matrix.png) | ![Pipeline C Weighted Ridge](https://github.com/Seeker66/ML3_Sem2/raw/main/graphics/pipelineC_weighted_ridge_matrix.png) |
-
-
+### Confusion Matrices
 
 <table>
-  <tr>
-    <td>
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." alt="Image 1" width="300">
-    </td>
-    <td>
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." alt="Image 2" width="300">
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." alt="Image 3" width="300">
-    </td>
-    <td>
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." alt="Image 4" width="300">
-    </td>
-  </tr>
+<tr>
+  <td><img src="https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_dtree_matrix.png" width="200"></td>
+  <td><img src="https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_knn_matrix.png" width="200"></td>
+  <td><img src="https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_unweighted_log_matrix.png" width="200"></td>
+</tr>
+<tr>
+  <td><img src="https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_unweighted_ridge_matrix.png" width="200"></td>
+  <td><img src="https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_weighted_log_matrix.png" width="200"></td>
+  <td><img src="https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_weighted_ridge_matrix.png" width="200"></td>
+</tr>
 </table>
 
-
-### Pipeline Results
-
-| Pipeline | Model               | Accuracy | Weighted Precision | Macro Precision | Notes |
-|----------|---------------------|----------|--------------------|-----------------|-------|
-| **Pipeline A - PCA only (19 components)** | Decision Tree       | 99.98%   | 0.999             | 0.985           | Strongest performer |
-|          | KNN                  | 99.97%   | 0.999             | 0.983           | Nearly as good |
-|          | Logistic Regression  | 98.70%   | 0.987             | Poor (~0.6–0.7) | Weak for minority classes |
-|          | Ridge Classifier     | ~98–99%  | High              | Low             | Unstable |
-| **Pipeline B - Random Forest with 50 permutations (21 features)** | Decision Tree       | 99.98%   | 0.998             | 0.981           | Very strong |
-|          | KNN                  | 99.96%   | 0.997             | 0.959           | Small macro drop |
-|          | Logistic Regression  | 64–92%   | 0.64–0.92         | Very low        | Fails minority detection |
-|          | Ridge Classifier     | ~92%     | Decent            | Weak            | Poorer than tree/KNN |
-| **Pipeline C - Hybrid (RF → PCA, 12 comps)** | Decision Tree       | 99.97%   | 0.997             | 0.961           | Strong, slightly lower macro |
-|          | KNN                  | 99.97%   | 0.998             | 0.980           | Strong all-round |
-|          | Logistic Regression  | 98.10%   | 0.981             | Poor            | Consistent weakness |
-|          | Ridge Classifier     | ~98%     | Good              | Weak            | Same trend |
-
-
-### **Pipeline A (PCA only)**
-- Logistic Regression (unweighted): **98.7% acc**  
-- Decision Tree: **99.98% acc, Macro ≈ 0.985**  
-- KNN: **99.97% acc, Macro ≈ 0.983**  
-- ![Confusion Matrix PCA](images/confusion_matrix_pca.png)
-
----
-
-### **Pipeline B (RF Features)**
-- Logistic Regression: **64–92% acc**, poor Macro precision  
-- Decision Tree: **99.98% acc, Macro ≈ 0.981**  
-- KNN: **99.96% acc, Macro ≈ 0.959**  
-- ![Confusion Matrix RF](images/confusion_matrix_rf.png)
-
----
-
-### **Pipeline C (RF + PCA)**
-- Logistic Regression (unweighted): **98.1% acc**  
-- Decision Tree: **99.97% acc, Macro ≈ 0.961**  
-- KNN: **99.97% acc, Macro ≈ 0.980**  
-- ![Confusion Matrix RF+PCA](images/confusion_matrix_rfpca.png)
 
 ---
 
 ## Key Findings
-- **Decision Tree consistently best performer** across all pipelines  
-- **Feature reduction improves training speed & accuracy** vs using raw dataset  
-- **KNN nearly matches Decision Tree** performance  
-- **Logistic Regression & Ridge** underperform on minority classes (poor Macro scores)  
-- **Pipeline B (RF feature selection)** gave best balance of **interpretability & accuracy**
 
----
+### Top 10 Models Across All Pipelines
 
-## Visual Outputs
-- PCA variance explained curve  
-- Feature importance plot  
-- Accuracy comparison chart  
-- Weighted vs Macro Precision comparison  
-- Confusion matrices  
+| Rank | Model | Pipeline | Accuracy | Weighted Precision | Macro Precision |
+|------|-------|---------|---------|------------------|----------------|
+| 1    | Decision Tree | B | 0.9998 | 0.9998 | 0.9880 |
+| 2    | Decision Tree | A | 0.9998 | 0.9998 | 0.9853 |
+| 3    | KNN           | A | 0.9997 | 0.9997 | 0.9828 |
+| 4    | KNN           | C | 0.9997 | 0.9997 | 0.9803 |
+| 5    | Decision Tree | C | 0.9997 | 0.9997 | 0.9614 |
+| 6    | Unweighted Logistic Regression | A | 0.9867 | 0.9817 | 0.3940 |
+| 7    | Unweighted Logistic Regression | C | 0.9812 | 0.9765 | 0.3929 |
+| 8    | Weighted Logistic Regression   | A | 0.9616 | 0.9863 | 0.4651 |
+| 9    | L2 Ridge (SGD)                 | A | 0.9472 | 0.9785 | 0.4214 |
+| 10   | Unweighted Ridge               | B | 0.9217 | 0.9219 | 0.3766 |
 
-(Placeholders above — embed your figures later)
+### Pipeline-Wide Performance Comparison (Average of All Models)
 
----
-**Summary:**  
-- **Decision Tree** and **KNN** dominate across pipelines.  
-- PCA provided excellent dimensionality reduction with minimal loss of information.  
-- Logistic Regression underperformed due to sensitivity to imbalance.  
-- Random Forest feature selection validated that ~21 features carry most predictive power.  
+| Pipeline | Avg Accuracy | Avg Weighted Precision | Avg Macro Precision |
+|----------|-------------|----------------------|-------------------|
+| A        | 0.9427      | 0.9705               | 0.6581            |
+| B        | 0.8737      | 0.9374               | 0.4936            |
+| C        | 0.9163      | 0.9604               | 0.5483            |
+
+**Summary:**
+
+- Pipeline A shows the strongest overall performance, both in accuracy and macro precision.  
+- Pipeline B contains the lowest performing models in terms of consistency and macro precision.  
+- Pipeline C is competitive with high scores, but slightly behind Pipeline A in consistency.
 
 ---
 
@@ -312,60 +211,8 @@ Implemented via a generalized `run_classifiers()` function:
 ### 2. Feature Reduction
 Choose one of the three pipelines:
 - **PCA**: Reduce dimensions while retaining variance.  
-- **Random Forest**: Select most important features.  
+- **Random Forest**: Select most important features. Permutation analysis and shifting is conducted to likewise calculate significance of features.
 - **RF + PCA**: Combine feature importance with dimensionality reduction.  
-
-## Pipeline A
-
-| Accuracy Comparison | Weighted vs Macro |
-|--------------------|-----------------|
-| ![Pipeline A Accuracy Comparison](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_accuracy_comparison.png) | ![Pipeline A Weighted vs Macro](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_weighted_vs_macro.png) |
-
-### Confusion Matrices
-
-| Decision Tree | KNN |
-|---------------|-----|
-| ![Pipeline A Decision Tree](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_dtree_matrix.png) | ![Pipeline A KNN](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_knn_matrix.png) |
-| Logistic (Unweighted) | Ridge (Unweighted) |
-| ![Pipeline A Unweighted Logistic](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_unweighted_log_matrix.png) | ![Pipeline A Unweighted Ridge](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_unweighted_ridge_matrix.png) |
-| Logistic (Weighted) | Ridge (Weighted) |
-| ![Pipeline A Weighted Logistic](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_weighted_log_matrix.png) | ![Pipeline A Weighted Ridge](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_weighted_ridge_matrix.png) |
-
----
-
-## Pipeline B
-
-| Accuracy Comparison | Weighted vs Macro |
-|--------------------|-----------------|
-| ![Pipeline B Accuracy Comparison](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_accuracy_comparison.png) | ![Pipeline B Weighted vs Macro](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_weighted_vs_macro.png) |
-
-### Confusion Matrices
-
-| Decision Tree | KNN |
-|---------------|-----|
-| ![Pipeline B Decision Tree](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_dtree_matrix.png) | ![Pipeline B KNN](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_knn_matrix.png) |
-| Logistic (Unweighted) | Ridge (Unweighted) |
-| ![Pipeline B Unweighted Logistic](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_unweighted_log_matrix.png) | ![Pipeline B Unweighted Ridge](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_unweighted_ridge_matrix.png) |
-| Logistic (Weighted) | Ridge (Weighted) |
-| ![Pipeline B Weighted Logistic](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_weighted_log_matrix.png) | ![Pipeline B Weighted Ridge](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_weighted_ridge_matrix.png) |
-
----
-
-## Pipeline C
-
-| Accuracy Comparison | Weighted vs Macro |
-|--------------------|-----------------|
-| ![Pipeline C Accuracy Comparison](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_accuracy_comparison.png) | ![Pipeline C Weighted vs Macro](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_weighted_vs_macro.png) |
-
-### Confusion Matrices
-
-| Decision Tree | KNN |
-|---------------|-----|
-| ![Pipeline C Decision Tree](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_dtree_matrix.png) | ![Pipeline C KNN](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_knn_matrix.png) |
-| Logistic (Unweighted) | Ridge (Unweighted) |
-| ![Pipeline C Unweighted Logistic](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_unweighted_log_matrix.png) | ![Pipeline C Unweighted Ridge](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_unweighted_ridge_matrix.png) |
-| Logistic (Weighted) | Ridge (Weighted) |
-| ![Pipeline C Weighted Logistic](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_weighted_log_matrix.png) | ![Pipeline C Weighted Ridge](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_weighted_ridge_matrix.png) |
 
 
 ### 3. Running Classifiers
