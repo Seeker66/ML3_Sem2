@@ -73,6 +73,84 @@ Implemented via a generalized `run_classifiers()` function:
 
 ## Results
 
+
+## Results
+
+### **Pipeline A – PCA only (19 components)**
+
+| Model                | Accuracy | Weighted Precision | Macro Precision | Notes |
+|----------------------|----------|-------------------|----------------|-------|
+| Logistic Regression   | 98.7%    | 0.987             | ~0.6–0.7       | Struggles on minority classes |
+| Decision Tree         | 99.98%   | 0.999             | 0.985          | Strongest performer |
+| KNN                   | 99.97%   | 0.999             | 0.983          | Nearly as strong |
+| Ridge Classifier      | ~98–99%  | High              | Low            | Unstable |
+
+<table>
+  <tr>
+    <td><img src="images/image1.png" alt="Image 1" width="300"></td>
+    <td><img src="images/image2.png" alt="Image 2" width="300"></td>
+  </tr>
+  <tr>
+    <td><img src="images/image3.png" alt="Image 3" width="300"></td>
+    <td><img src="images/image4.png" alt="Image 4" width="300"></td>
+  </tr>
+</table>
+
+
+
+📊 Example visualization:  
+![Confusion Matrix PCA](images/confusion_matrix_pca.png)
+
+---
+
+### **Pipeline B – Random Forest (21 selected features)**
+
+| Model                | Accuracy | Weighted Precision | Macro Precision | Notes |
+|----------------------|----------|-------------------|----------------|-------|
+| Logistic Regression   | 64–92%   | 0.64–0.92         | Very low       | Fails to detect minority classes |
+| Decision Tree         | 99.98%   | 0.998             | 0.981          | Very strong |
+| KNN                   | 99.96%   | 0.997             | 0.959          | Small macro precision drop |
+| Ridge Classifier      | ~92%     | Decent            | Weak           | Weaker than tree/KNN |
+
+📊 Example visualization:  
+![Confusion Matrix RF](images/confusion_matrix_rf.png)
+
+<table>
+  <tr>
+    <td><img src="images/image1.png" alt="Image 1" width="300"></td>
+    <td><img src="images/image2.png" alt="Image 2" width="300"></td>
+  </tr>
+  <tr>
+    <td><img src="images/image3.png" alt="Image 3" width="300"></td>
+    <td><img src="images/image4.png" alt="Image 4" width="300"></td>
+  </tr>
+</table>
+
+---
+
+### **Pipeline C – Hybrid (RF → PCA, 12 components)**
+
+| Model                | Accuracy | Weighted Precision | Macro Precision | Notes |
+|----------------------|----------|-------------------|----------------|-------|
+| Logistic Regression   | 98.1%    | 0.981             | Poor           | Consistently weak on minorities |
+| Decision Tree         | 99.97%   | 0.997             | 0.961          | Strong, slightly lower macro |
+| KNN                   | 99.97%   | 0.998             | 0.980          | Strong all-round |
+| Ridge Classifier      | ~98%     | Good              | Weak           | Similar weakness trend |
+
+📊 Example visualization:  
+![Confusion Matrix RF+PCA](images/confusion_matrix_rfpca.png)
+
+<table>
+  <tr>
+    <td><img src="images/image1.png" alt="Image 1" width="300"></td>
+    <td><img src="images/image2.png" alt="Image 2" width="300"></td>
+  </tr>
+  <tr>
+    <td><img src="images/image3.png" alt="Image 3" width="300"></td>
+    <td><img src="images/image4.png" alt="Image 4" width="300"></td>
+  </tr>
+</table>
+
 ### Pipeline Results
 
 | Pipeline | Model               | Accuracy | Weighted Precision | Macro Precision | Notes |
