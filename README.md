@@ -77,15 +77,15 @@ Implemented via a generalized `run_classifiers()` function:
 
 | Pipeline | Model               | Accuracy | Weighted Precision | Macro Precision | Notes |
 |----------|---------------------|----------|--------------------|-----------------|-------|
-| **PCA (19 comps)** | Decision Tree       | 99.98%   | 0.999             | 0.985           | Strongest performer |
+| **Pipeline A - PCA only (19 components)** | Decision Tree       | 99.98%   | 0.999             | 0.985           | Strongest performer |
 |          | KNN                  | 99.97%   | 0.999             | 0.983           | Nearly as good |
 |          | Logistic Regression  | 98.70%   | 0.987             | Poor (~0.6–0.7) | Weak for minority classes |
 |          | Ridge Classifier     | ~98–99%  | High              | Low             | Unstable |
-| **Random Forest (21 feats)** | Decision Tree       | 99.98%   | 0.998             | 0.981           | Very strong |
+| **Pipeline B - Random Forest with 50 permutations (21 features)** | Decision Tree       | 99.98%   | 0.998             | 0.981           | Very strong |
 |          | KNN                  | 99.96%   | 0.997             | 0.959           | Small macro drop |
 |          | Logistic Regression  | 64–92%   | 0.64–0.92         | Very low        | Fails minority detection |
 |          | Ridge Classifier     | ~92%     | Decent            | Weak            | Poorer than tree/KNN |
-| **Hybrid (RF → PCA, 12 comps)** | Decision Tree       | 99.97%   | 0.997             | 0.961           | Strong, slightly lower macro |
+| **Pipeline C - Hybrid (RF → PCA, 12 comps)** | Decision Tree       | 99.97%   | 0.997             | 0.961           | Strong, slightly lower macro |
 |          | KNN                  | 99.97%   | 0.998             | 0.980           | Strong all-round |
 |          | Logistic Regression  | 98.10%   | 0.981             | Poor            | Consistent weakness |
 |          | Ridge Classifier     | ~98%     | Good              | Weak            | Same trend |
