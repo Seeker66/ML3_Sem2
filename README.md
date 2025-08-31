@@ -9,7 +9,11 @@ The project investigates how different models and feature selection strategies c
 - **Goal:** Detect & classify malicious traffic using supervised ML  
 - **Dataset:** Network flow-based features (initially 79 columns → cleaned to 38)  
 - **Problem type:** Multiclass classification  
-- **Evaluation metrics:** Accuracy, Weighted Precision, Macro Precision  
+- **Performance Metrics**:  
+  * **Accuracy**  
+  * **Weighted Precision** (accounts for class imbalance by weighting each class by frequency)  
+  * **Macro Precision** (treats all classes equally, important for minority classes)  
+  * **Confusion Matrices**  
 
 ---
 
@@ -17,17 +21,16 @@ The project investigates how different models and feature selection strategies c
 
 ### 1. Cleaning & Preprocessing
 - Dropped NaN and Inf values  
-- Removed near-constant features  
-- Reduced highly correlated features (>0.95)  
+- Removed near-constant features (Tolerance of `>0.95`)
+- Reduced highly correlated features (Tolerance of `>0.95`)
 - Dataset reduced from **79 → 38 features (+1 target)**
 
 ### 2. Splitting
-- **Train:** 70% (831,833 rows × 78 features)  
+- **Training:** 70% (831,833 rows)  
 - **Validation:** 15% (178,250 rows)  
-- **Test:** 15% (178,250 rows)  
+- **Testing:** 15% (178,250 rows)  
 
 ---
-
 ## Feature Selection & Dimensionality Reduction
 
 ### **Pipeline A: PCA (95% variance explained)**
@@ -69,6 +72,24 @@ Implemented via a generalized `run_classifiers()` function:
 ---
 
 ## Results
+
+### Pipeline Results
+
+| Pipeline | Model               | Accuracy | Weighted Precision | Macro Precision | Notes |
+|----------|---------------------|----------|--------------------|-----------------|-------|
+| **PCA (19 comps)** | Decision Tree       | 99.98%   | 0.999             | 0.985           | Strongest performer |
+|          | KNN                  | 99.97%   | 0.999             | 0.983           | Nearly as good |
+|          | Logistic Regression  | 98.70%   | 0.987             | Poor (~0.6–0.7) | Weak for minority classes |
+|          | Ridge Classifier     | ~98–99%  | High              | Low             | Unstable |
+| **Random Forest (21 feats)** | Decision Tree       | 99.98%   | 0.998             | 0.981           | Very strong |
+|          | KNN                  | 99.96%   | 0.997             | 0.959           | Small macro drop |
+|          | Logistic Regression  | 64–92%   | 0.64–0.92         | Very low        | Fails minority detection |
+|          | Ridge Classifier     | ~92%     | Decent            | Weak            | Poorer than tree/KNN |
+| **Hybrid (RF → PCA, 12 comps)** | Decision Tree       | 99.97%   | 0.997             | 0.961           | Strong, slightly lower macro |
+|          | KNN                  | 99.97%   | 0.998             | 0.980           | Strong all-round |
+|          | Logistic Regression  | 98.10%   | 0.981             | Poor            | Consistent weakness |
+|          | Ridge Classifier     | ~98%     | Good              | Weak            | Same trend |
+
 
 ### **Pipeline A (PCA only)**
 - Logistic Regression (unweighted): **98.7% acc**  
@@ -113,15 +134,30 @@ Implemented via a generalized `run_classifiers()` function:
 (Placeholders above — embed your figures later)
 
 ---
+**Summary:**  
+- **Decision Tree** and **KNN** dominate across pipelines.  
+- PCA provided excellent dimensionality reduction with minimal loss of information.  
+- Logistic Regression underperformed due to sensitivity to imbalance.  
+- Random Forest feature selection validated that ~21 features carry most predictive power.  
 
-## ⚙️ How to Use
-```bash
-# Clone repository
-git clone https://github.com/yourusername/intrusion-detection-ml.git
-cd intrusion-detection-ml
+---
 
-# Install requirements
-pip install -r requirements.txt
+## How to Use
 
-# Run notebooks
-jupyter lab
+### 1. Data Preprocessing
+- Load dataset CSV into a Pandas DataFrame.  
+- Apply cleaning:
+  - Remove NaN and Inf values.  
+  - Drop low-variance and highly correlated features.  
+- Output: cleaned dataset with ~64 columns.  
+
+### 2. Feature Reduction
+Choose one of the three pipelines:
+- **PCA**: Reduce dimensions while retaining variance.  
+- **Random Forest**: Select most important features.  
+- **RF + PCA**: Combine feature importance with dimensionality reduction.  
+
+### 3. Running Classifiers
+Use the provided function:
+```python
+run_classifiers(X_train, y_train, X_val, y_val, label_column)
