@@ -315,7 +315,62 @@ Choose one of the three pipelines:
 - **Random Forest**: Select most important features.  
 - **RF + PCA**: Combine feature importance with dimensionality reduction.  
 
+## Pipeline A
+
+| Accuracy Comparison | Weighted vs Macro |
+|--------------------|-----------------|
+| ![Pipeline A Accuracy Comparison](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_accuracy_comparison.png) | ![Pipeline A Weighted vs Macro](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_weighted_vs_macro.png) |
+
+### Confusion Matrices
+
+| Decision Tree | KNN |
+|---------------|-----|
+| ![Pipeline A Decision Tree](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_dtree_matrix.png) | ![Pipeline A KNN](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_knn_matrix.png) |
+| Logistic (Unweighted) | Ridge (Unweighted) |
+| ![Pipeline A Unweighted Logistic](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_unweighted_log_matrix.png) | ![Pipeline A Unweighted Ridge](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_unweighted_ridge_matrix.png) |
+| Logistic (Weighted) | Ridge (Weighted) |
+| ![Pipeline A Weighted Logistic](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_weighted_log_matrix.png) | ![Pipeline A Weighted Ridge](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineA_weighted_ridge_matrix.png) |
+
+---
+
+## Pipeline B
+
+| Accuracy Comparison | Weighted vs Macro |
+|--------------------|-----------------|
+| ![Pipeline B Accuracy Comparison](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_accuracy_comparison.png) | ![Pipeline B Weighted vs Macro](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_weighted_vs_macro.png) |
+
+### Confusion Matrices
+
+| Decision Tree | KNN |
+|---------------|-----|
+| ![Pipeline B Decision Tree](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_dtree_matrix.png) | ![Pipeline B KNN](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_knn_matrix.png) |
+| Logistic (Unweighted) | Ridge (Unweighted) |
+| ![Pipeline B Unweighted Logistic](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_unweighted_log_matrix.png) | ![Pipeline B Unweighted Ridge](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_unweighted_ridge_matrix.png) |
+| Logistic (Weighted) | Ridge (Weighted) |
+| ![Pipeline B Weighted Logistic](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_weighted_log_matrix.png) | ![Pipeline B Weighted Ridge](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineB_weighted_ridge_matrix.png) |
+
+---
+
+## Pipeline C
+
+| Accuracy Comparison | Weighted vs Macro |
+|--------------------|-----------------|
+| ![Pipeline C Accuracy Comparison](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_accuracy_comparison.png) | ![Pipeline C Weighted vs Macro](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_weighted_vs_macro.png) |
+
+### Confusion Matrices
+
+| Decision Tree | KNN |
+|---------------|-----|
+| ![Pipeline C Decision Tree](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_dtree_matrix.png) | ![Pipeline C KNN](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_knn_matrix.png) |
+| Logistic (Unweighted) | Ridge (Unweighted) |
+| ![Pipeline C Unweighted Logistic](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_unweighted_log_matrix.png) | ![Pipeline C Unweighted Ridge](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_unweighted_ridge_matrix.png) |
+| Logistic (Weighted) | Ridge (Weighted) |
+| ![Pipeline C Weighted Logistic](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_weighted_log_matrix.png) | ![Pipeline C Weighted Ridge](https://raw.githubusercontent.com/Seeker66/ML3_Sem2/main/graphics/pipelineC_weighted_ridge_matrix.png) |
+
+
 ### 3. Running Classifiers
 Use the provided function:
 ```python
 run_classifiers(X_train, y_train, X_val, y_val, label_column)
+
+
