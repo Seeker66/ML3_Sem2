@@ -19,6 +19,9 @@ The project investigates how different models and feature selection strategies c
 
 ## Dataset Preparation
 
+### Dataset Source:
+https://www.kaggle.com/datasets/subhajournal/sdn-intrusion-detection
+
 ### 1. Cleaning & Preprocessing
 - Dropped NaN and Inf values  
 - Removed near-constant features (Tolerance of `>0.95`)
@@ -37,7 +40,6 @@ The project investigates how different models and feature selection strategies c
 - Features reduced: **38 → 19 components**  
 - Explained variance ≈ **99.9998%**  
 - R² = 0.61 (moderate reconstruction)  
-- ![PCA Variance Plot](images/pca_variance.png)
 
 ---
 
@@ -47,7 +49,6 @@ The project investigates how different models and feature selection strategies c
   - `Destination Port`  
   - `Fwd IAT Min`, `Flow IAT Min`, `Fwd IAT Std`  
 - Dropped uninformative (p=1.0) features  
-- ![Feature Importance](images/feature_importance.png)
 
 ---
 
